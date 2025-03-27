@@ -322,7 +322,7 @@ def rle_decode(rle, shape):
     rle = np.array(rle, dtype=np.int32).reshape([-1, 2])
     rle[:, 1] += rle[:, 0]
     rle -= 1
-    mask = np.zeros([shape[0] * shape[1]], np.bool)
+    mask = np.zeros([shape[0] * shape[1]], bool)
     for s, e in rle:
         assert 0 <= s < mask.shape[0]
         assert 1 <= e <= mask.shape[0], "shape: {}  s {}  e {}".format(shape, s, e)
